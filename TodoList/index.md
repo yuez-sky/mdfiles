@@ -39,4 +39,22 @@ module.exports = vuxLoader.merge(webpackConfig,{
 });
 ```
 
-###
+### 后端
+#### 数据库
+docker 设置加速源
+- /etc/docker/daemon.json
+```
+{
+    "registry-mirrors": [
+        "http://796958e9.m.daocloud.io"
+    ],
+    "insecure-registries": []
+}
+```
+
+- 执行命令
+```
+docker run -p 3306:3306 -d --name todolist -e MYSQL_ROOT_PASSWORD=todopwd1234- mysql
+```
+
+#### api
